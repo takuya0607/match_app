@@ -66,7 +66,7 @@
       </div>
       <div class="form-group @error('self_introduction')has-error @enderror">
         <label>自己紹介文</label>
-        <textarea class="form-control" name="self_introduction" rows="10"></textarea>
+        <textarea class="form-control" name="self_introduction" rows="6"></textarea>
           @error('self_introduction')
           <span class="errorMessage">
             {{ $message }}
