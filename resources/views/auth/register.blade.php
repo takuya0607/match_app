@@ -7,9 +7,9 @@
   </header>
   <div class='container'>
 
-    <form class="form mt-5" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-    @csrf
-
+  <form class="row mt-5" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+  @csrf
+  <div class="col-sm-6 offset-sm-3">
       <label for="file_photo" class="rounded-circle userProfileImg">
         <div class="userProfileImg_description">画像をアップロード</div>
         <i class="fas fa-camera fa-3x"></i>
@@ -30,9 +30,8 @@
             </span>
         @enderror
 
-    </div>
       <div class="form-group @error('email')has-error @enderror">
-        <label>メールアドレス</label>
+        <label class="pt-2">メールアドレス</label>
         <input type="email" name="email" class="form-control" placeholder="メールアドレスを入力してください">
         @error('email')
             <span class="errorMessage">
@@ -75,14 +74,14 @@
           @enderror
         </div>
     </div>
-
+  </div>
+  </form>
       <div class="text-center">
       <button type="submit" class="btn submitBtn">はじめる</button>
       <div class="linkToLogin">
         <a href="{{ route('login') }}">ログインはこちら</a>
       </div>
       </div>
-    </form>
   </div>
 </div>
 @endsection
