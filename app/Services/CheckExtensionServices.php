@@ -7,6 +7,7 @@ class CheckExtensionServices
 
   public static function checkExtension($fileData, $extension){
 
+    // 拡張子が大文字の可能性もあるので、mb_strtolower関数で小文字に変更
     $extension = mb_strtolower($extension);
 
     if ($extension === 'jpg'){
