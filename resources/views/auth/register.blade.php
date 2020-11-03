@@ -41,7 +41,7 @@
       </div>
       <div class="form-group @error('password')has-error @enderror">
         <label>パスワード</label>
-        <em>8文字以上入力してください</em>
+        <em>6文字以上入力してください</em>
         <input type="password" name="password" class="form-control" placeholder="パスワードを入力してください">
         @error('password')
             <span class="errorMessage">
@@ -66,7 +66,7 @@
       </div>
       <div class="form-group @error('self_introduction')has-error @enderror">
         <label>自己紹介文</label>
-        <textarea class="form-control" name="self_introduction" rows="6"></textarea>
+        <textarea class="form-control" name="self_introduction" rows="10"></textarea>
           @error('self_introduction')
           <span class="errorMessage">
             {{ $message }}
@@ -74,12 +74,14 @@
           @enderror
         </div>
     </div>
-    <div class="text-center">
-      <button type="submit" class="btn submitBtn">はじめる</button>
-    <div class="linkToLogin">
-      <a href="{{ route('login') }}">ログインはこちら</a>
-    </div>
   </div>
   </form>
+      <div class="text-center">
+      <button type="submit" class="btn submitBtn">はじめる</button>
+      <div class="linkToLogin">
+        <a href="{{ route('login') }}">ログインはこちら</a>
+      </div>
+      </div>
+  </div>
 </div>
 @endsection
