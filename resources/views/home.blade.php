@@ -6,7 +6,7 @@
   <nav class="nav">
     <ul>
       <li class="personIcon">
-        <a href="/users/show/{{Auth::id()}}"><i class="fas fa-user fa-2x"></i></a></li>
+        <a href="/users/show/{{Auth::id()}}"><i class="fas fa-user fa-3x"></i></a></li>
       <li class="appIcon"><a href="{{route('home')}}"><img src="/storage/images/techpit-match-icon.png"></a></li>
     </ul>
   </nav>
@@ -28,5 +28,11 @@
       <a href="#" class="like"><i class="fas fa-heart fa-2x"></i></a>
   </div>
 </div>
+
+<!-- // ここを追加 -->
+<script>
+  var usersNum = {{ $userCount }};
+  var from_user_id = {{ $from_user_id }};
+</script>
 
 @endsection
