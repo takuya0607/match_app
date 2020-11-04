@@ -6,9 +6,9 @@
   <div class='container'>
     <header class="header">
       <p class='header_logo'>
-      <a href="{{ route('home') }}">
-      <img src="/storage/images/techpit-match-icon.png">
-      </a>
+        <a href="{{ route('home') }}">
+          <img src="/storage/images/techpit-match-icon.png">
+        </a>
       </p>
     </header>
     <div class='userInfo'>
