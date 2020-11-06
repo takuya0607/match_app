@@ -17,12 +17,12 @@ class MatchingController extends Controller
 
       // $got_reaction_ids変数に、Reactionテーブルから値をwhereで取得して代入する
       $got_reaction_ids = Reaction::where([
-          //to_user_idが自分になる。
-          // この二行で、自分へのリアクションがLIKE状態を指定
-          ['to_user_id', Auth::id()],
-          ['status', Status::LIKE]
-          // pluckを使うことで、自分へLIKEしてくれた人(from_user_id)のID情報のみを取得
-          ])->pluck('from_user_id');
+      //to_user_idが自分になる。
+      // この二行で、自分へのリアクションがLIKE状態を指定
+      ['to_user_id', Auth::id()],
+      ['status', Status::LIKE]
+      // pluckを使うことで、自分へLIKEしてくれた人(from_user_id)のID情報のみを取得
+      ])->pluck('from_user_id');
 
       // whereInメソッドは指定した配列の中にカラムの値が含まれている条件を加える
       // LIKEしてくれた人の中で、'to_user_id'カラムから、自分がLIKEした人だけを抽出

@@ -19,7 +19,7 @@
         @foreach($users as $user)
         <li data-user_id="{{ $user->id }}">
           <div class="userName">{{ $user->name }}</div>
-          <img src="/storage/images/{{ $user->img_name}}">
+          <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
           <div class="like"></div>
           <div class="dislike"></div>
         </li>
