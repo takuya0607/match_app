@@ -14,7 +14,7 @@
     <div class="messagesArea messages">
     @foreach($chat_messages as $message)
     <div class="message">
-      @if($message->user_id = Auth::id())
+      @if($message->user_id == Auth::id())
         <span>{{Auth::user()->name}}</span>
       @else
         <span>{{$chat_room_user_name}}</span>
