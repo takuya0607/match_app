@@ -73,38 +73,46 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-  protected function create(array $data)
-    {
-      // ---ここから追加---
-      //引数 $data から'img_name'を取得(アップロードするファイル情報)
-      // $imageFileという変数に、$data配列の'img_name'を代入する
-      $imageFile = $data['img_name'];
+  protected function create(array $data) {
 
-      $list = FileUploadServices::fileUpload($imageFile); //変更
+        // もし'img_name'が空でなければ
+        if (!empty($data['img_name'])) {
+        //引数 $data から'img_name'を取得(アップロードするファイル情報)
+        // $imageFileという変数に、$data配列の'img_name'を代入する
+        $imageFile = $data['img_name'];
 
-      // list関数を使い、3つの変数に分割
-      list($extension, $fileNameToStore, $fileData) = $list; //変更
+        $list = FileUploadServices::fileUpload($imageFile);
 
-      //拡張子ごとに base64エンコード実施
-      $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
+        // list関数を使い、3つの変数に分割
+        list($extension, $fileNameToStore, $fileData) = $list;
 
-      //画像アップロード(Imageクラス makeメソッドを使用)
-      $image = Image::make($data_url);
+        //拡張子ごとに base64エンコード実施
+        $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
 
-      //画像を横400px, 縦400pxにリサイズし保存
-      $image->resize(400,400)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
-      // ---ここまで追加---
+        //画像アップロード(Imageクラス makeメソッドを使用)
+        $image = Image::make($data_url);
 
-      //createメソッドでユーザー情報を作成
-      return User::create([
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'password' => Hash::make($data['password']),
-          'self_introduction' => $data['self_introduction'],
-          'sex' => $data['sex'],
+        //画像を横400px, 縦400pxにリサイズし保存
+        $image->resize(400,400)->save(storage_path() . '/app/public/images/' . $fileNameToStore );
 
-          // ここを変更
-          'img_name' => $fileNameToStore,
-      ]);
-    }
+        //createメソッドでユーザー情報を作成
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'self_introduction' => $data['self_introduction'],
+            'sex' => $data['sex'],
+            'img_name' => $fileNameToStore,
+        ]);
+        }else{
+        // 'img_nameが空だったら'
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'self_introduction' => $data['self_introduction'],
+            'sex' => $data['sex'],
+        ]);
+          }
+      }
 }
