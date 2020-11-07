@@ -18,6 +18,7 @@ class AddColumnToUsersTable extends Migration
           $table->string('self_introduction', 500)->nullable();
           $table->tinyInteger('sex')->default(0);
           $table->string('img_name')->default('');
+          $table->integer('age');
         });
     }
 

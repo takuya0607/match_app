@@ -64,6 +64,7 @@ class RegisterController extends Controller
             'img_name' => ['file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2000'], //この行を追加します
             // 自己紹介文のバリデーション
             'self_introduction' => ['string', 'max:255'], //この行を追加します
+            'age' => ['required'],
         ]);
     }
 
@@ -103,6 +104,7 @@ class RegisterController extends Controller
             'self_introduction' => $data['self_introduction'],
             'sex' => $data['sex'],
             'img_name' => $fileNameToStore,
+            'age' => $data['age'],
         ]);
         }else{
         // 'img_nameが空だったら'
@@ -112,6 +114,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'self_introduction' => $data['self_introduction'],
             'sex' => $data['sex'],
+            'age' => $data['age'],
         ]);
           }
       }

@@ -72,9 +72,20 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->sex = $request->sex;
         $user->self_introduction = $request->self_introduction;
+        $user->age = $request->age;
 
         $user->save();
 
         return redirect('home');
     }
+
+        public function destroy($id)
+    {
+        User::findOrFail($id)->delete();
+
+        return redirect('/');
+    }
+
+
+
 }
