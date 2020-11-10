@@ -40,8 +40,11 @@
       <div class="form-group">
         <label>年齢</label>
         <select class="form-control" name="age">
+        <!-- 変数iに20を代入し、forで60を満たすまで+1を繰り返す -->
           @for ($i = 20; $i <= 60; $i++)
+          <!-- もし$user->ageの値が、$iの数字(20~60)と一致していれば -->
             @if($user->age === $i)
+            <!-- selectedで$iを選択した状態に -->
               <option value="{{$i}}" selected>{{ $i }}歳</option>
             @else
               <option value="{{$i}}" >{{ $i }}歳</option>
