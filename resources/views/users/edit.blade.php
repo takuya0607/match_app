@@ -41,7 +41,11 @@
         <label>年齢</label>
         <select class="form-control" name="age">
           @for ($i = 20; $i <= 60; $i++)
-            <option value="{{ $i }}" selected="{{ old($user->age) }}">{{ $i }}歳</option>
+            @if($user->age === $i)
+              <option value="{{$i}}" selected>{{ $i }}歳</option>
+            @else
+              <option value="{{$i}}" >{{ $i }}歳</option>
+            @endif
           @endfor
         </select>
       </div>
