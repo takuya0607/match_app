@@ -29,16 +29,37 @@
           <span>情報を編集</span>
         </div>
         <div class='userAction_logout userAction_common'>
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();"><i class="fas fa-cog fa-2x"></i></a>
+            <i class="fas fa-cog fa-2x" data-toggle="modal" data-target="#logoutModal"></i>
           <span>ログアウト</span>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-          </form>
         </div>
       </div>
 
   </div>
 </div>
+
+
+<!-- ボタン・リンククリック後に表示される画面の内容 -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <label>ログアウトしますか？</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        @csrf
+        <div class="delete_btn">
+          <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#logoutModal">
+          <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          </a>ログアウト</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 @endsection

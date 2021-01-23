@@ -17350,7 +17350,7 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-#tinderslide ul > li .userName {
+#tinderslide ul > li .userNews {
   position: absolute;
   bottom: 5px;
   color: #000;

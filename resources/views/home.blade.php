@@ -18,7 +18,10 @@
     <ul>
         @foreach($users as $user)
         <li data-user_id="{{ $user->id }}">
-          <div class="userName">{{ $user->name }}</div>
+          <div class="userNews d-flex justify-content-between">
+            <div>{{ $user->name }}</div>
+            <div class="ml-2">{{ $user->age }}歳</div>
+          </div>
           <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
           <div class="like"></div>
           <div class="dislike"></div>

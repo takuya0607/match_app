@@ -121,6 +121,7 @@ return [
       'email'=>'メールアドレス', //追記
       'password'=>'パスワード', //追記
       'self_introduction'=>'自己紹介文', //追記
+      'age' => '年齢',
     ],
 
 ];
