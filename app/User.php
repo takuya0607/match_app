@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'self_introduction', 'sex', 'img_name', 'age',
     ];
 
     /**
@@ -36,4 +36,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function toUserId()
+    {
+        // hasMany(相手のモデル名, 相手モデルのID, 自モデルのID)
+        return $this->hasMany('App\Reaction', 'to_user_id', 'id');
+    }
+
+    public function fromUserId()
+    {
+        return $this->hasMany('App\Reaction', 'from_user_id', 'id');
+    }
+
+    public function chatMessages()
+    {
+        return $this->hasMany('App\ChatMessage');
+    }
+
+    public function chatRoomUsers()
+    {
+        return $this->hasMany('App\ChatRoomUsers');
+    }
 }
