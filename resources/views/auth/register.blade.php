@@ -1,7 +1,5 @@
 @extends('layouts.layout')
 
-<script src="{{ asset('js/users.js') }}"></script>
-
 @section('content')
 
 <div class="signupPage">
@@ -106,4 +104,7 @@
     </form>
   </div>
 </div>
+
 @endsection
+
+
