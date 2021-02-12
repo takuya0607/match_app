@@ -1,12 +1,12 @@
-import './bootstrap';
+require('./bootstrap');
 
-import './chat';
+require('./chat');
 
-import './jquery.jTinder'; //追加
+require('./jquery.jTinder'); //追加
 
-import './jquery.transform2d'; //追加
+require('./jquery.transform2d'); //追加
 
-import './jTinder'; //追加
+require('./jTinder'); //追加
 
-import './users';
+require('./users');
 
