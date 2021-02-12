@@ -30,7 +30,7 @@
               </span>
           @enderror
         </div>
-        
+
         <div class="form-group @error('email')has-error @enderror">
           <label class="pt-2">メールアドレス <span class="badge badge-danger p-2">必須</span></label>
           <input type="email" name="email" class="form-control" placeholder="メールアドレスを入力してください">
