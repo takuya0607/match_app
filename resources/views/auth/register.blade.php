@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-<script src="{{ asset('js/user.js') }}"></script>
+<script src="{{ asset('js/users.js') }}"></script>
 
 @section('content')
 
