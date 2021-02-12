@@ -22,7 +22,13 @@
             <div>{{ $user->name }}</div>
             <div class="ml-2">{{ $user->age }}歳</div>
           </div>
-          <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+          <div class="home_user_img">
+            @isset($user->img_name)
+              <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+            @else
+              <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
+            @endisset
+          </div>
           <div class="like"></div>
           <div class="dislike"></div>
         </li>

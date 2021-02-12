@@ -10,11 +10,6 @@
     <form class="row mt-5" method="POST" action="/users/update/{{ $user->id }}" enctype="multipart/form-data">
     @csrf
 
-    @error('email')
-    <span class="errorMessage">
-        {{ $message }}
-    </span>
-    @enderror
     <div class="col-sm-6 offset-sm-3">
       <label for="file_photo" class="rounded-circle userProfileImg">
         <div class="userProfileImg_description">画像をアップロード</div>
@@ -27,15 +22,26 @@
         <p class="userImgPreview_text">画像をアップロード済み</p>
       </div>
 
-      <div class="form-group">
-        <label>名前</label>
-        <input type="text" name="name" class="form-control" value="{{ $user->name }}">
+      <div class="form-group @error('name')has-error @enderror">
+        <label>名前 <span class="badge badge-danger p-2">必須</span></label>
+        <input type="text" name="name" class="form-control" value="{{ $user->name }}" placeholder="名前を入力してください">
+        <!-- エラーメッセージ'name'は、validation.phpに記載 -->
+        @error('name')
+            <span class="errorMessage">
+              {{ $message }}
+            </span>
+        @enderror
       </div>
 
-      <div class="form-group">
-        <label>メールアドレス</label>
-        <input type="email" name="email" class="form-control" value="{{ $user->email }}">
-      </div>
+        <div class="form-group @error('email')has-error @enderror">
+          <label class="pt-2">メールアドレス <span class="badge badge-danger p-2">必須</span></label>
+          <input type="email" name="email" class="form-control" value="{{ $user->email }}" placeholder="メールアドレスを入力してください">
+          @error('email')
+              <span class="errorMessage">
+                {{ $message }}
+              </span>
+          @enderror
+        </div>
 
       <div class="form-group">
         <label>年齢</label>
@@ -65,10 +71,14 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label>自己紹介文</label>
-        <textarea class="form-control" name="self_introduction" rows="10">{{$user->self_introduction}}
-        </textarea>
+      <div class="form-group @error('self_introduction')has-error @enderror">
+        <label>自己紹介文 <span class="badge badge-danger p-2">必須</span></label>
+        <textarea class="form-control" name="self_introduction" rows="10">{{$user->self_introduction}}</textarea>
+          @error('self_introduction')
+          <span class="errorMessage">
+            {{ $message }}
+          </span>
+          @enderror
       </div>
 
       <div class="text-center">

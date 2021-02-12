@@ -13,7 +13,11 @@
     </header>
     <div class='userInfo'>
       <div class='userInfo_img'>
-      <img src="/storage/images/{{$user -> img_name}}">
+          @isset($user->img_name)
+            <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+          @else
+            <img src="/images/avatar-default.svg" class="rounded-circle">
+          @endisset
       </div>
       <div class="row">
         <div class="col-sm-6 offset-sm-3">
