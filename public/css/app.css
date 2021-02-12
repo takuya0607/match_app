@@ -17536,6 +17536,15 @@ body {
   color: #dccbcb;
 }
 
+.home_user_img {
+  height: 400px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .matchingPage .header {
   display: flex;
   align-items: center;
@@ -17615,6 +17624,30 @@ body {
   opacity: 0.7;
 }
 
+@media (max-width: 892px) {
+  .userInfo_selfIntroduction {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 691px) {
+  .match_userInfo_selfIntroduction {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 440px) {
+  .match_userInfo_selfIntroduction {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 420px) {
+  .match_userInfo_selfIntroduction {
+    max-width: 175px;
+  }
+}
+
 .chatPage input[type=text]:focus {
   outline: 0;
 }
@@ -17655,7 +17688,7 @@ body {
 }
 
 .chatPage .messagesArea {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 72vh;
 }
 

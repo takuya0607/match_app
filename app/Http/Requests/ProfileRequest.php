@@ -33,7 +33,7 @@ class ProfileRequest extends FormRequest
 
         return [
             // ここから追加
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:15',
             'email' => ['required',
                         'string',
                         'email',
@@ -42,6 +42,7 @@ class ProfileRequest extends FormRequest
                         // 今回で例えると自分のメールアドレスは含まない
                         Rule::unique('users', 'email')->whereNot('email', $myEmail)],
             // ここまで追加
+            'self_introduction' => 'string|max:30',
             ];
     }
 }
