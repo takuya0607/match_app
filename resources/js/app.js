@@ -1,16 +1,5 @@
 import './bootstrap';
 
-import './users';
-
-import './jquery.jTinder'; //追加
-
-import './jquery.transform2d'; //追加
-
-import './jTinder'; //追加
-
-import './chat';
-
-
 // changeイベントは、フォーム要素が変更された時に発火するイベント
 $(document).on("change", "#file_photo", function (e) {
   // varで変数readerを定義する
