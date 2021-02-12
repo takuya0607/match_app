@@ -2,10 +2,6 @@
 
 @section('content')
 
-<script>
-  alert('JavaScriptのアラート');
-</script>
-
 <div class="signupPage">
   <header class="header">
     <h3>アカウントを作成</h1>
@@ -109,3 +105,5 @@
   </div>
 </div>
 @endsection
+
+<!--  -->
