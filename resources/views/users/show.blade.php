@@ -5,16 +5,16 @@
 <div class='usershowPage'>
   <div class='container'>
     <header class="header">
-      <p class='header_logo'>
+      <p class='header_logo mt-1 mr-2'>
         <a href="{{ route('home') }}">
-          <img src="data:image/png;base64,techpit-match-icon.png">
+          <i class="fas fa-fire-alt fa-4x" style="color:deeppink;"></i>
         </a>
       </p>
     </header>
     <div class='userInfo'>
       <div class='userInfo_img'>
           @isset($user->img_name)
-            <img src="data:image/png;base64,{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+            <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
           @else
             <img src="/images/avatar-default.svg" class="rounded-circle">
           @endisset

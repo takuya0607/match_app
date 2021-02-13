@@ -19,7 +19,7 @@ class CheckExtensionServices
     }
 
     if ($extension === 'png'){
-      $data_url = 'data:image/png;base64,'. base64_encode($fileData);
+      $data_url = '/storage/images/'. base64_encode($fileData);
     }
 
     if ($extension === 'gif'){

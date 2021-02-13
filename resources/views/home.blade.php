@@ -7,7 +7,7 @@
     <ul>
       <li class="personIcon">
         <a href="/users/show/{{Auth::id()}}"><i class="fas fa-user fa-3x"></i></a></li>
-      <li class="appIcon"><a href="{{route('home')}}"><img src="data:image/png;base64,techpit-match-icon.png"></a></li>
+      <li class="appIcon"><a href="{{route('home')}}"><i class="fas fa-fire-alt fa-3x" style="color:deeppink;"></i></a></li>
 
       <!-- ここの行を追加 -->
       <li class="messageIcon"><a href="{{route('matching')}}"><i class="fas fa-3x fa-comments"></a></i></li>
@@ -24,7 +24,7 @@
           </div>
           <div class="home_user_img">
             @isset($user->img_name)
-              <img src="data:image/png;base64,{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+              <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
             @else
               <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
             @endisset

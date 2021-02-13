@@ -5,7 +5,7 @@
 <div class="matchingPage">
   <header class="header">
     <i class="fas fa-comments fa-3x"></i>
-    <div class="header_logo"><a href="{{route('home')}}"><img src="data:image/png;base64,techpit-match-icon.png"></a></div>
+    <div class="header_logo"><a href="{{route('home')}}"><i class="fas fa-fire-alt fa-3x" style="color:deeppink;"></i></a></div>
   </header>
   <div class="container">
     <div class="mt-5">
@@ -16,7 +16,7 @@
           <div class="matchingPerson">
           <div class="matchingPerson_img">
             @isset($user->img_name)
-              <img src="data:image/png;base64,{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
+              <img src="/storage/images/{{ $user->img_name}}" alt onerror="this.onerror = null; this.src='';">
             @else
               <img src="/images/avatar-default.svg" class="rounded-circle">
             @endisset
