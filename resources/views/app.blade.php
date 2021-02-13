@@ -9,6 +9,8 @@
   </title>
   <!-- Font Awesome -->
 
+  <script src="{{ asset('js/app.js') }}"></script>
+
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
